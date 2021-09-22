@@ -1,4 +1,4 @@
-package com.vijay.androidtesting
+package com.vijay.androidtesting.data
 
 import android.content.Context
 import androidx.room.Room
