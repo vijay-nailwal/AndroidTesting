@@ -24,7 +24,6 @@ class SpendsDatabaseTest : TestCase() {
 
     @Before
     public override fun setUp() {
-        println("setup executed")
         val context = ApplicationProvider.getApplicationContext<Context>()
         db = Room.inMemoryDatabaseBuilder(context, SpendsDatabase::class.java).build()
         dao = db.getSpendDao()
@@ -32,13 +31,11 @@ class SpendsDatabaseTest : TestCase() {
 
     @After
     fun closeDb() {
-        println("closeDb")
         db.close()
     }
 
     @Test
     fun writeAndReadSpend() = runBlocking {
-        println("writeAndReadSpend executed")
         val date = Date()
         val spend = Spend(date, 100, "Bought something")
         dao.addSpend(spend)
